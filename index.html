@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опросник пациента</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; padding: 15px; }
+        .form-card { max-width: 450px; margin: 0 auto; background: white; padding: 25px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { color: #0056b3; text-align: center; margin-bottom: 25px; }
+        .question-block { margin-bottom: 20px; }
+        
+        .input-field { 
+            width: 100%; 
+            padding: 12px; 
+            margin-top: 8px; 
+            border: 2px solid #e0e0e0; 
+            border-radius: 10px; 
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        /* Подсветка поля при ошибке */
+        .input-field:invalid { border-color: #dc3545; }
+        .input-field:valid { border-color: #28a745; }
+
+        label { display: flex; align-items: center; padding: 14px; margin-bottom: 10px; background: #f1f3f5; border-radius: 10px; cursor: pointer; }
+        input[type="radio"] { margin-right: 15px; width: 20px; height: 20px; }
+        
+        button { width: 100%; background: #007bff; color: white; border: none; padding: 16px; border-radius: 10px; font-size: 18px; font-weight: bold; margin-top: 10px; }
+        .hint { font-size: 12px; color: #6c757d; margin-top: 4px; }
+    </style>
+</head>
+<body>
+
+<div class="form-card">
+    <h2>Карта пациента</h2>
+    
+    <form action="https://formspree.io/f/xzdvzdrl" method="POST">
+        
+        <div class="question-block">
+            <p><strong>ID Пациента (номер карты):</strong></p>
+            <input type="text" 
+                   name="PatientID" 
+                   class="input-field" 
+                   placeholder="Например: 1234" 
+                   required 
+                   pattern="[0-9]{4,10}" 
+                   inputmode="numeric"
+                   title="ID должен содержать от 4 до 10 цифр">
+            <p class="hint">Минимум 4 цифры</p>
+        </div>
+
+        <div class="question-block">
+            <p><strong>Ваше ФИО:</strong></p>
+            <input type="text" name="PatientName" class="input-field" placeholder="Иван Иванов" required>
+        </div>
+
+        <div class="question-block">
+            <p><strong>1. Как ваше самочувствие?</strong></p>
+            <label><input type="radio" name="Feeling" value="Отлично" required> Отлично</label>
+            <label><input type="radio" name="Feeling" value="Удовлетворительно"> Удовлетворительно</label>
+            <label><input type="radio" name="Feeling" value="Плохо"> Плохо</label>
+        </div>
+
+        <div class="question-block">
+            <p><strong>2. Болевые ощущения (0-10):</strong></p>
+            <label><input type="radio" name="Pain" value="0-2" required> 0-2 (Почти нет)</label>
+            <label><input type="radio" name="Pain" value="3-6"> 3-6 (Умеренно)</label>
+            <label><input type="radio" name="Pain" value="7-10"> 7-10 (Сильно)</label>
+        </div>
+
+        <button type="submit">Отправить данные</button>
+    </form>
+</div>
+
+</body>
+</html>
