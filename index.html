@@ -7,27 +7,15 @@
     <style>
         body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; padding: 15px; }
         .form-card { max-width: 450px; margin: 0 auto; background: white; padding: 25px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        h2 { color: #0056b3; text-align: center; margin-bottom: 25px; }
+        h2 { color: #0056b3; text-align: center; }
         .question-block { margin-bottom: 20px; }
-        
-        .input-field { 
-            width: 100%; 
-            padding: 12px; 
-            margin-top: 8px; 
-            border: 2px solid #e0e0e0; 
-            border-radius: 10px; 
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-        /* Подсветка поля при ошибке */
-        .input-field:invalid { border-color: #dc3545; }
-        .input-field:valid { border-color: #28a745; }
-
+        .input-field { width: 100%; padding: 12px; margin-top: 8px; border: 2px solid #e0e0e0; border-radius: 10px; box-sizing: border-box; font-size: 16px; }
         label { display: flex; align-items: center; padding: 14px; margin-bottom: 10px; background: #f1f3f5; border-radius: 10px; cursor: pointer; }
         input[type="radio"] { margin-right: 15px; width: 20px; height: 20px; }
-        
-        button { width: 100%; background: #007bff; color: white; border: none; padding: 16px; border-radius: 10px; font-size: 18px; font-weight: bold; margin-top: 10px; }
-        .hint { font-size: 12px; color: #6c757d; margin-top: 4px; }
+        button { width: 100%; background: #28a745; color: white; border: none; padding: 16px; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; }       
+        /* Стиль для сообщения об успехе */
+        #thankYouMessage { display: none; text-align: center; padding: 20px; }
+        .success-icon { font-size: 50px; color: #28a745; margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -76,7 +64,6 @@
         <div class="success-icon">✓</div>
         <h2>Спасибо!</h2>
         <p>Ваши данные успешно переданы лечащему врачу.</p>
-        <p style="color: #666; font-size: 14px;">Пожалуйста, оставайтесь в покое и ожидайте визита медицинского персонала.</p>
     </div>
 </div>
 
@@ -112,3 +99,4 @@
 
 </body>
 </html>
+
